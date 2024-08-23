@@ -23,10 +23,10 @@
                 <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="novo-usuario.php">Novo Usuario</a>
+                <a class="nav-link" href="?page=novo">Novo Usuario</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="listar-usuario.php">Listar Usuarios</a>
+                <a class="nav-link" href="?page=listar">Listar Usuarios</a>
                 </li>
             </ul>
             </div>
@@ -37,6 +37,7 @@
           <div class="row">
             <div class="col mt-5">
               <?php
+                include("config.php");
                 switch(@$_REQUEST["page"]){
                     case "novo":
                       include("novo-usuario.php");
@@ -45,7 +46,7 @@
                       include("listar-usuario.php");
                       break;
                     default:
-                      print "bem vindos";
+                      print "<h1>bem vindos</h1>";
                 }
               ?>
             </div>
