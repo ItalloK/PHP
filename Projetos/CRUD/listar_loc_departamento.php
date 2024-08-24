@@ -7,7 +7,7 @@
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>Numero Departamento</th><th>Local Departamento</th></tr>";
+        print "<tr><th>Nº Local Departamento</th><th>Local Departamento</th></tr>";
         while ($row = $res->fetch_object()) {
             print "<tr>";
             print "<td>" . $row->Dnumero . "</td>";
