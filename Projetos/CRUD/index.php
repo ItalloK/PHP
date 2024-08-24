@@ -2,14 +2,41 @@
 <html lang="pt-BR">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <title>Cadastro</title>
+  <title>
+    <?php 
+      switch (@$_REQUEST["page"]) {
+        case "novo":
+          echo "Cadastrar Novo Usuário";
+          break;
+        case "importar":
+          echo "Importar Usuários";
+          break;
+        case "listar_departamentos":
+          echo "Departamentos";
+          break;
+        case "listar_dependentes":
+          echo "Dependentes";
+          break;
+        case "listar_funcionarios":
+          echo "Funcionários";
+          break;
+        case "listar_loc_departamento":
+          echo "Localização dos Departamentos";
+          break;
+        case "listar_projetos":
+          echo "Projetos";
+          break;
+        case "listar_trabalhaem":
+          echo "Onde Trabalha";
+          break;
+        default:
+          echo "Cadastro";
+      }
+    ?>
+  </title>
 </head>
 
 <body>
@@ -31,7 +58,6 @@
             <ul class="dropdown-menu" aria-labelledby="novoUsuarioDropdown">
               <li><a class="dropdown-item" href="?page=novo">Cadastrar Novo</a></li>
               <li><a class="dropdown-item" href="?page=importar">Importar Usuários</a></li>
-              <!-- Adicione outras opções aqui -->
             </ul>
           </li>
           <li class="nav-item dropdown">
