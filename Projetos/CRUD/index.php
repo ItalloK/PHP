@@ -8,9 +8,6 @@
   <title>
     <?php 
       switch (@$_REQUEST["page"]) {
-        case "novo":
-          echo "Cadastrar Novo Usuário";
-          break;
         case "importar":
           echo "Importar Usuários";
           break;
@@ -31,6 +28,9 @@
           break;
         case "listar_trabalhaem":
           echo "Onde Trabalha";
+          break;
+        case "cad_funcionario":
+          echo "Cadastrar Funcionario";
           break;
         default:
           echo "Cadastro";
@@ -56,10 +56,9 @@
               Cadastrar
             </a>
             <ul class="dropdown-menu" aria-labelledby="novoUsuarioDropdown">
-              <li><a class="dropdown-item" href="?page=novo">Old</a></li>
               <li><a class="dropdown-item" href="?page=importar">Novo Departamento</a></li>
               <li><a class="dropdown-item" href="?page=importar">Novo Dependente</a></li>
-              <li><a class="dropdown-item" href="?page=importar">Novo Funcioario</a></li>
+              <li><a class="dropdown-item" href="?page=cad_funcionario">Novo Funcioario</a></li>
               <li><a class="dropdown-item" href="?page=importar">Novo Localizacao Departamento</a></li>
               <li><a class="dropdown-item" href="?page=importar">Novo Projeto</a></li>
               <li><a class="dropdown-item" href="?page=importar">Novo Trabalha Em</a></li>
@@ -90,9 +89,6 @@
         <?php
         include("config.php");
         switch (@$_REQUEST["page"]) {
-          case "novo":
-            include("novo-usuario.php");
-            break;
           case "salvar":
             include("salvar-usuario.php");
             break;
@@ -116,6 +112,9 @@
               break;
             case "listar_trabalhaem":
               include("listar_trabalhaem.php");
+              break;
+            case "cad_funcionario":
+              include("cad_funcionario.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";
