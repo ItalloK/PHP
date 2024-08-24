@@ -95,10 +95,27 @@
             $res = $conn->query($sql);
     
             if($res == true){
-                print "<script>alert('Deletado com sucesso');</script>";
+                print "<script>alert('Cadastrado com sucesso');</script>";
                 print "<script>location.href='?page=listar';</script>";
             }else{
-                print "<script>alert('Não foi possivel deletar');</script>";
+                print "<script>alert('Não foi possivel cadastrar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+        
+        case 'cadastrar_local_departamento':
+            $dlocal = $_POST["Dlocal"];
+        
+            $sql = "INSERT INTO localizacao_dep (Dlocal) 
+                    VALUES ('{$dlocal}')";
+        
+            $res = $conn->query($sql);
+    
+            if($res == true){
+                print "<script>alert('Cadastrado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel cadastrar');</script>";
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
