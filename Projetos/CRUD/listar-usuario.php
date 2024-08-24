@@ -49,7 +49,9 @@ function exibirDepartamentos($conn) {
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>DNumero</th><th>Cpf_Gerente</th><th>Dnome</th><th>Data inicio Gerente</th><th>Loc Departamento</th></tr>";
+        print "<tr><th>Nº Departamento</th>
+                <th>CPF Gerente</th><th>Nome Departamento</th>
+                <th>Data inicio Gerente</th><th>Localização Departamento</th></tr>";
         while ($row = $res->fetch_object()) {
             print "<tr>";
             print "<td>" . $row->Dnumero . "</td>";
@@ -66,18 +68,20 @@ function exibirDepartamentos($conn) {
 }
 
 function exibirDependentes($conn) {
-    $sql = "SELECT * FROM dependentes";
+    $sql = "SELECT * FROM dependente";
     $res = $conn->query($sql);
     $qtd = $res->num_rows;
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>ID</th><th>Nome</th><th>ID Funcionário</th></tr>";
+        print "<tr><th>Nome</th><th>Sexo</th><th>Data de Nascimento</th><th>Parentesco</th><th>Cpf Funcionario</th></tr>";
         while ($row = $res->fetch_object()) {
             print "<tr>";
-            print "<td>" . $row->id . "</td>";
-            print "<td>" . $row->nome . "</td>";
-            print "<td>" . $row->funcionario_id . "</td>";
+            print "<td>" . $row->Nome . "</td>";
+            print "<td>" . $row->Sexo . "</td>";
+            print "<td>" . convertData($row->Datanasc) . "</td>";
+            print "<td>" . $row->Parentesco . "</td>";
+            print "<td>" . $row->funcionario_Cpf . "</td>";
             print "</tr>";
         }
         print "</table>";
@@ -87,19 +91,22 @@ function exibirDependentes($conn) {
 }
 
 function exibirFuncionarios($conn) {
-    $sql = "SELECT * FROM funcionarios";
+    $sql = "SELECT * FROM funcionario";
     $res = $conn->query($sql);
     $qtd = $res->num_rows;
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>ID</th><th>Nome</th><th>Email</th><th>Data de Nascimento</th></tr>";
+        print "<tr><th>CPF</th><th>Nome</th><th>Data de Nascimento</th><th>Endereco</th>
+                <th>Sexo</th><th>Salario</th></tr>";
         while ($row = $res->fetch_object()) {
             print "<tr>";
-            print "<td>" . $row->id . "</td>";
-            print "<td>" . $row->nome . "</td>";
-            print "<td>" . $row->email . "</td>";
-            print "<td>" . convertData($row->data_nascimento) . "</td>";
+            print "<td>" . $row->Cpf . "</td>";
+            print "<td>" . $row->Nome . "</td>";
+            print "<td>" . convertData($row->Datanasc) . "</td>";
+            print "<td>" . $row->Endereco . "</td>";
+            print "<td>" . $row->Sexo . "</td>";
+            print "<td>" . $row->Salario . "</td>";
             print "</tr>";
         }
         print "</table>";
@@ -109,18 +116,17 @@ function exibirFuncionarios($conn) {
 }
 
 function exibirLocalizacaoDepartamentos($conn) {
-    $sql = "SELECT * FROM localizacao_departamentos";
+    $sql = "SELECT * FROM localizacao_dep";
     $res = $conn->query($sql);
     $qtd = $res->num_rows;
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>ID</th><th>Departamento</th><th>Localização</th></tr>";
+        print "<tr><th>Numero Departamento</th><th>Local Departamento</th></tr>";
         while ($row = $res->fetch_object()) {
             print "<tr>";
-            print "<td>" . $row->id . "</td>";
-            print "<td>" . $row->departamento_id . "</td>";
-            print "<td>" . $row->localizacao . "</td>";
+            print "<td>" . $row->Dnumero . "</td>";
+            print "<td>" . $row->Dlocal . "</td>";
             print "</tr>";
         }
         print "</table>";
@@ -130,18 +136,19 @@ function exibirLocalizacaoDepartamentos($conn) {
 }
 
 function exibirProjetos($conn) {
-    $sql = "SELECT * FROM projetos";
+    $sql = "SELECT * FROM projeto";
     $res = $conn->query($sql);
     $qtd = $res->num_rows;
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>ID</th><th>Nome</th><th>Departamento</th></tr>";
+        print "<tr><th>Nº do Projeto</th><th>Nome Projeto</th><th>Local Projeto</th><th>Nº do Departamento</th></tr>";
         while ($row = $res->fetch_object()) {
             print "<tr>";
-            print "<td>" . $row->id . "</td>";
-            print "<td>" . $row->nome . "</td>";
-            print "<td>" . $row->departamento_id . "</td>";
+            print "<td>" . $row->Projnumero . "</td>";
+            print "<td>" . $row->Projnome . "</td>";
+            print "<td>" . $row->Projlocal . "</td>";
+            print "<td>" . $row->Dnum . "</td>";
             print "</tr>";
         }
         print "</table>";
