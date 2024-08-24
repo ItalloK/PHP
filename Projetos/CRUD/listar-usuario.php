@@ -1,23 +1,51 @@
-<h1 style="display: inline-block;">Listar Usuarios</h1>
+<h1 style="display: inline-block;">
+    <?php
+    $titulo = "Departamentos";
+
+    if (isset($_POST['option'])) {
+        switch ($_POST['option']) {
+            case '1':
+                $titulo = "Departamentos";
+                break;
+            case '2':
+                $titulo = "Dependentes";
+                break;
+            case '3':
+                $titulo = "Funcionários";
+                break;
+            case '4':
+                $titulo = "Localização de Departamentos";
+                break;
+            case '5':
+                $titulo = "Projetos";
+                break;
+            case '6':
+                $titulo = "Trabalha em";
+                break;
+            default:
+                $titulo = "Departamentos";
+                break;
+        }
+    }
+
+    echo $titulo;
+    ?>
+</h1>
 
 <form method="POST" id="filterForm" style="display: inline-block;">
     <select name="option" class="form-select" style="width: auto; display: inline-block; margin-left: 15px; vertical-align: 7px; padding-top: 2px;" onchange="document.getElementById('filterForm').submit();">
         <option selected>Escolha uma opção</option>
         <option value="1">Departamentos</option>
         <option value="2">Dependentes</option>
-        <option value="3">Funcionarios</option>
+        <option value="3">Funcionários</option>
         <option value="4">Localização Departamentos</option>
         <option value="5">Projetos</option>
-        <option value="6">Trabalha Em...</option>
+        <option value="6">Trabalha em</option>
     </select>
 </form>
 
-
 <?php
-// Verifica se uma opção foi selecionada
 $option = isset($_POST['option']) ? $_POST['option'] : null;
-
-// Chama a função correspondente à opção selecionada
 switch ($option) {
     case '1':
         exibirDepartamentos($conn);
@@ -38,7 +66,7 @@ switch ($option) {
         exibirTrabalhaEm($conn);
         break;
     default:
-        exibirUsuarios($conn);
+        exibirDepartamentos($conn);
         break;
 }
 
@@ -164,38 +192,13 @@ function exibirTrabalhaEm($conn) {
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>ID Funcionário</th><th>ID Projeto</th><th>Horas</th></tr>";
+        print "<tr><th>ID</th><th>CPF Funcionario</th><th>Nº do Projeto</th><th>Horas Trabalhadas</th></tr>";
         while ($row = $res->fetch_object()) {
             print "<tr>";
-            print "<td>" . $row->funcionario_id . "</td>";
-            print "<td>" . $row->projeto_id . "</td>";
-            print "<td>" . $row->horas . "</td>";
-            print "</tr>";
-        }
-        print "</table>";
-    } else {
-        print "<p class='alert alert-danger'>Não encontrou resultados</p>";
-    }
-}
-
-function exibirUsuarios($conn) {
-    $sql = "SELECT * FROM usuarios";
-    $res = $conn->query($sql);
-    $qtd = $res->num_rows;
-
-    if ($qtd > 0) {
-        print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>ID</th><th>Nome</th><th>Email</th><th>Data de Nascimento</th><th>Ações</th></tr>";
-        while ($row = $res->fetch_object()) {
-            print "<tr>";
-            print "<td>" . $row->id . "</td>";
-            print "<td>" . $row->nome . "</td>";
-            print "<td>" . $row->email . "</td>";
-            print "<td>" . convertData($row->data_nascimento) . "</td>";
-            print "<td>
-                    <button onclick=\"location.href='?page=editar&id=" . $row->id . "';\" class='btn-success'>Editar</button>
-                    <button onclick=\"if(confirm('Tem certeza que deseja deletar este usuario?')){location.href='?page=salvar&acao=excluir&id=" . $row->id . "';}else{false;}\" class='btn-danger'>Excluir</button>
-                   </td>";
+            print "<td>" . $row->idTrabalhaEm . "</td>";
+            print "<td>" . $row->Fcpf . "</td>";
+            print "<td>" . $row->Pnr . "</td>";
+            print "<td>" . $row->Horas . "</td>";
             print "</tr>";
         }
         print "</table>";
@@ -212,4 +215,3 @@ function convertData($data) {
     return $data;
 }
 ?>
-
