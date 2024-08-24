@@ -141,13 +141,12 @@
             break;
 
         case 'cadastrar_projeto':
-            $cpf_funcionario = $_POST["cpf_funcionario"];
-            $Nome_Departamento = $_POST["Nome_Departamento"];
-            $Data_Inicio_Gerente = $_POST["Data_Inicio_Gerente"];
-            $loc_departamento = $_POST["loc_departamento"];
+            $proj_nome = $_POST["proj_nome"];
+            $proj_local = $_POST["proj_local"];
+            $departamento = $_POST["departamento"];
         
-            $sql = "INSERT INTO departamento (Cpf_gerente, Dnome, Data_inicio_gerente, LocDepartamento) 
-                    VALUES ('{$cpf_funcionario}', '{$Nome_Departamento}', '{$Data_Inicio_Gerente}', '{$loc_departamento}')";
+            $sql = "INSERT INTO projeto (Projnome, Projlocal, Dnum) 
+                    VALUES ('{$proj_nome}', '{$proj_local}', {$departamento})";
         
             $res = $conn->query($sql);
     
