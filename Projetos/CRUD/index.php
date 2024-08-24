@@ -41,6 +41,12 @@
         case 'cad_departamento':
           echo "Cadastrar Departamento";
           break;
+        case 'cad_projeto':
+          echo "Cadastrar Projeto";
+          break;
+        case 'cad_trabalha_em':
+          echo "Cadastrar Trabalha Em";
+          break;
         default:
           echo "Cadastro";
       }
@@ -69,8 +75,8 @@
               <li><a class="dropdown-item" href="?page=cad_dependente">Novo Dependente</a></li>
               <li><a class="dropdown-item" href="?page=cad_funcionario">Novo Funcioario</a></li>
               <li><a class="dropdown-item" href="?page=cad_local_departamento">Novo Localizacao Departamento</a></li>
-              <li><a class="dropdown-item" href="?page=importar">Novo Projeto</a></li>
-              <li><a class="dropdown-item" href="?page=importar">Novo Trabalha Em</a></li>
+              <li><a class="dropdown-item" href="?page=cad_projeto">Novo Projeto</a></li>
+              <li><a class="dropdown-item" href="?page=cad_trabalha_em">Novo Trabalha Em</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -133,6 +139,12 @@
               break;
             case "cad_departamento":
               include("cad_departamento.php");
+              break;
+            case "cad_projeto":
+              include("cad_projeto.php");
+              break;
+            case "cad_trabalha_em":
+              include("cad_trabalha_em.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";

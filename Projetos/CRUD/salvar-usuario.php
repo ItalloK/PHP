@@ -139,6 +139,26 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
+
+        case 'cadastrar_projeto':
+            $cpf_funcionario = $_POST["cpf_funcionario"];
+            $Nome_Departamento = $_POST["Nome_Departamento"];
+            $Data_Inicio_Gerente = $_POST["Data_Inicio_Gerente"];
+            $loc_departamento = $_POST["loc_departamento"];
+        
+            $sql = "INSERT INTO departamento (Cpf_gerente, Dnome, Data_inicio_gerente, LocDepartamento) 
+                    VALUES ('{$cpf_funcionario}', '{$Nome_Departamento}', '{$Data_Inicio_Gerente}', '{$loc_departamento}')";
+        
+            $res = $conn->query($sql);
+    
+            if($res == true){
+                print "<script>alert('Cadastrado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel cadastrar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
     }
 
 ?>
