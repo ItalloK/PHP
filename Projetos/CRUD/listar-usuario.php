@@ -1,4 +1,15 @@
-<h1>Listar Usuarios</h1>
+<h1 style="display: inline-block;">Listar Usuarios</h1>
+
+<select class="form-select" style="width: auto; display: inline-block; margin-left: 15px; vertical-align: 7px; padding-top: 2px;">
+    <option selected>Escolha uma opção</option>
+    <option value="1">Departamentos</option>
+    <option value="2">Dependentes</option>
+    <option value="3">Funcionarios</option>
+    <option value="4">Localização Departamentos</option>
+    <option value="5">Projetos</option>
+    <option value="6">Trabalha Em...</option>
+</select>
+
 
 <?php
 
