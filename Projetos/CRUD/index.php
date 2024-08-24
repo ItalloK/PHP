@@ -42,22 +42,27 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Cadastro</a>
+      <a class="navbar-brand" href="index.php">Cadastro</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="novoUsuarioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Novo Usuário
+              Cadastrar
             </a>
             <ul class="dropdown-menu" aria-labelledby="novoUsuarioDropdown">
-              <li><a class="dropdown-item" href="?page=novo">Cadastrar Novo</a></li>
-              <li><a class="dropdown-item" href="?page=importar">Importar Usuários</a></li>
+              <li><a class="dropdown-item" href="?page=novo">Old</a></li>
+              <li><a class="dropdown-item" href="?page=importar">Novo Departamento</a></li>
+              <li><a class="dropdown-item" href="?page=importar">Novo Dependente</a></li>
+              <li><a class="dropdown-item" href="?page=importar">Novo Funcioario</a></li>
+              <li><a class="dropdown-item" href="?page=importar">Novo Localizacao Departamento</a></li>
+              <li><a class="dropdown-item" href="?page=importar">Novo Projeto</a></li>
+              <li><a class="dropdown-item" href="?page=importar">Novo Trabalha Em</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -113,7 +118,9 @@
               include("listar_trabalhaem.php");
               break;
           default:
-            print "<h1>bem vindos</h1>";
+            print "<h1>CRUD PHP</h1>";
+            print "<h5>CRUD criado para ser utilizado no banco de dados DbEmpresas criado em sala de aula.</br></h5>
+                    <p>Nome: Italo Gabriel, RA: 044704, Curso: Engenharia de Computação, 4º Periodo</br></p>";
         }
         ?>
       </div>
