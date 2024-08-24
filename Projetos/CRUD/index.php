@@ -38,6 +38,9 @@
         case 'cad_local_departamento':
           echo "Cadastrar Local Departamento";
           break;
+        case 'cad_departamento':
+          echo "Cadastrar Departamento";
+          break;
         default:
           echo "Cadastro";
       }
@@ -62,7 +65,7 @@
               Cadastrar
             </a>
             <ul class="dropdown-menu" aria-labelledby="novoUsuarioDropdown">
-              <li><a class="dropdown-item" href="?page=importar">Novo Departamento</a></li>
+              <li><a class="dropdown-item" href="?page=cad_departamento">Novo Departamento</a></li>
               <li><a class="dropdown-item" href="?page=cad_dependente">Novo Dependente</a></li>
               <li><a class="dropdown-item" href="?page=cad_funcionario">Novo Funcioario</a></li>
               <li><a class="dropdown-item" href="?page=cad_local_departamento">Novo Localizacao Departamento</a></li>
@@ -127,6 +130,9 @@
               break;
             case "cad_local_departamento":
               include("cad_local_departamento.php");
+              break;
+            case "cad_departamento":
+              include("cad_departamento.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";
