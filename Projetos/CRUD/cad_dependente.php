@@ -25,16 +25,16 @@
     </div>
     </div>
     <div class="mb-3">
-        <label>Cpf Funcionario</label>
+        <label>Cpf Funcionário</label>
         <select name="cpf_funcionario" class="form-control" required>
             <option value="">Selecione o CPF do Funcionário</option>
             <?php
             if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
+                while ($row = $result->fetch_assoc()) {
                     echo "<option value='" . $row["Cpf"] . "'>" . $row["Nome"] . " - " . $row["Cpf"] . "</option>";
                 }
             } else {
-                echo "<option value=''>Nenhum funcionário encontrado</option>";
+                echo "<option value='' disabled>Nenhum funcionário encontrado</option>";
             }
             ?>
         </select>

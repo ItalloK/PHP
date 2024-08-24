@@ -17,20 +17,21 @@
     </div>
     </div>
     <div class="mb-3">
-        <label>Departamento</label>
+    <label>Departamento</label>
         <select name="departamento" class="form-control" required>
             <option value="">Selecione o Departamento</option>
             <?php
             if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
+                while ($row = $result->fetch_assoc()) {
                     echo "<option value='" . $row["Dnumero"] . "'>" . $row["Dnome"] . " - " . $row["Dnumero"] . "</option>";
                 }
             } else {
-                echo "<option value=''>Nenhum departamento encontrado</option>";
+                echo "<option value='' disabled>Nenhum departamento encontrado</option>";
             }
             ?>
         </select>
     </div>
+
     <div class="mb-3">
         <button type="submit" class="btn_primary">Enviar</button>
     </div>

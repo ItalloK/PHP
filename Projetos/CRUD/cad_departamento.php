@@ -21,7 +21,7 @@
                     echo "<option value='" . $row["Cpf"] . "'>" . $row["Nome"] . " - " . $row["Cpf"] . "</option>";
                 }
             } else {
-                echo "<option value=''>Nenhum funcionário encontrado</option>";
+                echo "<option value='' disabled>Nenhum funcionário encontrado</option>";
             }
             ?>
         </select>
@@ -41,16 +41,17 @@
         <select name="loc_departamento" class="form-control" required>
             <option value="">Selecione o local do Departamento</option>
             <?php
-            if ($result->num_rows > 0) {
-                while($row2 = $result2->fetch_assoc()) {
+            if ($result2->num_rows > 0) {
+                while ($row2 = $result2->fetch_assoc()) {
                     echo "<option value='" . $row2["Dnumero"] . "'>" . $row2["Dlocal"] . " - " . $row2["Dnumero"] . "</option>";
                 }
             } else {
-                echo "<option value=''>Nenhum funcionário encontrado</option>";
+                echo "<option value='' disabled>Nenhum local encontrado</option>";
             }
             ?>
         </select>
     </div>
+
 
 
     <div class="mb-3">
