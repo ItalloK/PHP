@@ -158,6 +158,25 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
+
+        case 'cadastrar_trabalha_em':
+            $funcionario = $_POST["funcionario"];
+            $projeto = $_POST["projeto"];
+            $horas_trabalhadas = $_POST["horas_trabalhadas"];
+        
+            $sql = "INSERT INTO trabalha_em (Fcpf, Pnr, Horas) 
+                    VALUES ('{$funcionario}', '{$projeto}', {$horas_trabalhadas})";
+        
+            $res = $conn->query($sql);
+    
+            if($res == true){
+                print "<script>alert('Cadastrado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel cadastrar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
     }
 
 ?>

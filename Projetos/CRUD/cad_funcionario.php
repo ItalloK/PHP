@@ -22,7 +22,7 @@
         <input type="text" name="Sexo" class="form-control" maxlength="1">
     </div>
     <div class="mb-3">
-        <label>Valor</label>
+        <label>Salario</label>
         <input type="number" name="Salario" class="form-control" step="0.01" min="0" placeholder="0.00">
     </div>
         
