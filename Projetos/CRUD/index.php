@@ -36,13 +36,15 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="listarUsuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Listar Usuários
+              Listar
             </a>
             <ul class="dropdown-menu" aria-labelledby="listarUsuariosDropdown">
-              <li><a class="dropdown-item" href="?page=listar">Listar Todos</a></li>
-              <li><a class="dropdown-item" href="?page=listarAtivos">Listar Ativos</a></li>
-              <li><a class="dropdown-item" href="?page=listarInativos">Listar Inativos</a></li>
-              <!-- Adicione outras opções aqui -->
+              <li><a class="dropdown-item" href="?page=listar_departamentos">Departamentos</a></li>
+              <li><a class="dropdown-item" href="?page=listar_dependentes">Dependentes</a></li>
+              <li><a class="dropdown-item" href="?page=listar_funcionarios">Funcionarios</a></li>
+              <li><a class="dropdown-item" href="?page=listar_loc_departamento">Localizacao Departamentos</a></li>
+              <li><a class="dropdown-item" href="?page=listar_projetos">Projetos</a></li>
+              <li><a class="dropdown-item" href="?page=listar_trabalhaem">Onde Trabalha</a></li>
             </ul>
           </li>
         </ul>
@@ -60,15 +62,30 @@
           case "novo":
             include("novo-usuario.php");
             break;
-          case "listar":
-            include("listar-usuario.php");
-            break;
           case "salvar":
             include("salvar-usuario.php");
             break;
           case "editar":
             include("editar-usuario.php");
             break;
+          case "listar_departamentos":
+            include("listar-departamento.php");
+            break;
+          case "listar_dependentes":
+            include("listar-dependente.php");
+            break;
+            case "listar_funcionarios":
+              include("listar-funcionarios.php");
+              break;
+            case "listar_loc_departamento":
+              include("listar_loc_departamento.php");
+              break;
+            case "listar_projetos":
+              include("listar_projetos.php");
+              break;
+            case "listar_trabalhaem":
+              include("listar_trabalhaem.php");
+              break;
           default:
             print "<h1>bem vindos</h1>";
         }
