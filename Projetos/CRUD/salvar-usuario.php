@@ -177,6 +177,28 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
+
+        case 'editar_projeto':
+            $Projnome = $_POST["Projnome"];
+            $Projlocal = $_POST["Projlocal"];
+            $departamento = $_POST["departamento"];
+
+            $sql = "UPDATE projeto SET 
+                        Projnome = '{$Projnome}',
+                        Projlocal = '{$Projlocal}',
+                        Dnum = {$departamento} 
+                    WHERE 
+                        Projnumero=".$_REQUEST["Projnumero"];
+
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Editado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
     }
 
 ?>
