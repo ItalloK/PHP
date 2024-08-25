@@ -47,6 +47,9 @@
         case 'cad_trabalha_em':
           echo "Cadastrar Trabalha Em";
           break;
+        case 'editar_projetos':
+          echo "Editar Projetos";
+          break;
         default:
           echo "CRUD PHP";
       }
@@ -145,6 +148,9 @@
               break;
             case "cad_trabalha_em":
               include("cad_trabalha_em.php");
+              break;
+            case "editar_projetos":
+              include("editar_projetos.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";

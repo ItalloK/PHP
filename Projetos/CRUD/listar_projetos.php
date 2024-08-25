@@ -7,19 +7,27 @@
 
     if ($qtd > 0) {
         print "<table class='table table-hover table-striped table-bordered'>";
-        print "<tr><th>Nº do Projeto</th><th>Nome Projeto</th><th>Local Projeto</th><th>Nº do Departamento</th></tr>";
+        print "<tr><th>Nº do Projeto</th><th>Nome Projeto</th><th>Local Projeto</th><th>Nº do Departamento</th><th>Ações</th></tr>";
+        
         while ($row = $res->fetch_object()) {
             print "<tr>";
             print "<td>" . $row->Projnumero . "</td>";
             print "<td>" . $row->Projnome . "</td>";
             print "<td>" . $row->Projlocal . "</td>";
             print "<td>" . $row->Dnum . "</td>";
+            print   "<td>
+                        <button onclick=\"location.href='?page=editar_projetos&id=".$row->Projnumero."';\" class='btn btn-warning'>Editar</button>
+
+                        <button class='btn btn-danger'>Excluir</button>
+                    </td>";
             print "</tr>";
         }
+        
         print "</table>";
     } else {
         print "<p class='alert alert-danger'>Não encontrou resultados</p>";
     }
+    
 
 
     function convertData($data) {

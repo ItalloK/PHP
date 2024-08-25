@@ -3,8 +3,7 @@
 <?php
     $sql = "SELECT * FROM usuarios WHERE id=".$_REQUEST["id"];
     $res = $conn -> query($sql);
-    $row = $res -> fetch_object();
-    
+    $row = $res -> fetch_object(); 
 ?>
 
 <form action="?page=salvar" method="POST"> 
