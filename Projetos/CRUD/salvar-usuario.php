@@ -43,17 +43,6 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
-        case 'excluir':
-            $sql = "DELETE FROM usuarios WHERE id=".$_REQUEST["id"];
-            $res = $conn -> query($sql);
-            if($res == true){
-                print "<script>alert('Deletado com sucesso');</script>";
-                print "<script>location.href='?page=listar';</script>";
-            }else{
-                print "<script>alert('Não foi possivel deletar');</script>";
-                print "<script>location.href='?page=listar';</script>";
-            }
-            break;
         case 'cadastrar_funcionario':
             try {
                 $conn->report_mode = MYSQLI_REPORT_ALL;
@@ -196,6 +185,17 @@
                 print "<script>location.href='?page=listar';</script>";
             }else{
                 print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+        case 'excluir_projeto':
+            $sql = "DELETE FROM projeto WHERE Projnumero =".$_REQUEST["id"];
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Deletado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel deletar');</script>";
                 print "<script>location.href='?page=listar';</script>";
             }
             break;

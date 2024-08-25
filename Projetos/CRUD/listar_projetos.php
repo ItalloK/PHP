@@ -17,8 +17,7 @@
             print "<td>" . $row->Dnum . "</td>";
             print   "<td>
                         <button onclick=\"location.href='?page=editar_projetos&id=".$row->Projnumero."';\" class='btn btn-warning'>Editar</button>
-
-                        <button class='btn btn-danger'>Excluir</button>
+                        <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir_projeto&id=".$row->Projnumero."';}else{false;}\" class='btn btn-danger'>Excluir</button>
                     </td>";
             print "</tr>";
         }
