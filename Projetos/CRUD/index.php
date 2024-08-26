@@ -114,40 +114,40 @@
             include("editar-usuario.php");
             break;
           case "listar_departamentos":
-            include("listar-departamento.php");
+            include("listar/listar-departamento.php");
             break;
           case "listar_dependentes":
-            include("listar-dependente.php");
+            include("listar/listar-dependente.php");
             break;
             case "listar_funcionarios":
-              include("listar-funcionarios.php");
+              include("listar/listar-funcionarios.php");
               break;
             case "listar_loc_departamento":
-              include("listar_loc_departamento.php");
+              include("listar/listar_loc_departamento.php");
               break;
             case "listar_projetos":
-              include("listar_projetos.php");
+              include("listar/listar_projetos.php");
               break;
             case "listar_trabalhaem":
-              include("listar_trabalhaem.php");
+              include("listar/listar_trabalhaem.php");
               break;
             case "cad_funcionario":
-              include("cad_funcionario.php");
+              include("cadastrar/cad_funcionario.php");
               break;
             case "cad_dependente":
-              include("cad_dependente.php");
+              include("cadastrar/cad_dependente.php");
               break;
             case "cad_local_departamento":
-              include("cad_local_departamento.php");
+              include("cadastrar/cad_local_departamento.php");
               break;
             case "cad_departamento":
-              include("cad_departamento.php");
+              include("cadastrar/cad_departamento.php");
               break;
             case "cad_projeto":
-              include("cad_projeto.php");
+              include("cadastrar/cad_projeto.php");
               break;
             case "cad_trabalha_em":
-              include("cad_trabalha_em.php");
+              include("cadastrar/cad_trabalha_em.php");
               break;
             case "editar_projetos":
               include("editar_projetos.php");
