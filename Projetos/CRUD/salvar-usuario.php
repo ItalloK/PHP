@@ -222,7 +222,17 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
-
+        case 'excluir_departamento':
+            $sql = "DELETE FROM departamento WHERE Dnumero =".$_REQUEST["id"];
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Deletado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel deletar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
 
 
         case 'editar_dependente':
@@ -247,6 +257,18 @@
                 print "<script>location.href='?page=listar';</script>";
             }else{
                 print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+
+        case 'excluir_dependente':
+            $sql = "DELETE FROM dependente WHERE idDependente =".$_REQUEST["id"];
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Deletado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel deletar');</script>";
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
