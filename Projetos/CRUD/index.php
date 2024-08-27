@@ -62,6 +62,9 @@
         case 'editar_localizar_dep':
           echo "Editar Localizacao Departamento";
           break;
+        case 'editar_trabalha_em':
+          echo "Editar Trabalha Em";
+          break;
         default:
           echo "CRUD PHP";
       }
@@ -175,6 +178,9 @@
               break;
             case "editar_localizar_dep":
               include("editar/editar_localizar_dep.php");
+              break;
+            case "editar_trabalha_em":
+              include("editar/editar_trabalha_em.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";

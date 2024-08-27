@@ -343,6 +343,40 @@
             }
             break;
 
+        case 'editar_trabalha_em':
+            $idTrabalhaEm = $_POST["idTrabalhaEm"];
+            $Fcpf = $_POST["funcionario"];
+            $Pnr = $_POST["projeto"];
+            $Horas = $_POST["horas_trabalhadas"];
+
+            $sql = "UPDATE trabalha_em SET 
+                        Fcpf = '{$Fcpf}',
+                        Pnr = {$Pnr},
+                        Horas = {$Horas}
+                    WHERE 
+                        idTrabalhaEm=".$_REQUEST["idTrabalhaEm"];
+
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Editado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+
+        case 'excluir_trabalha_em':
+            $sql = "DELETE FROM trabalha_em WHERE idTrabalhaEm =".$_REQUEST["id"];
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Deletado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel deletar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
 
     }
 

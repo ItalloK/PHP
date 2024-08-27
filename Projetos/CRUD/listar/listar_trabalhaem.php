@@ -14,6 +14,10 @@
             print "<td>" . $row->Fcpf . "</td>";
             print "<td>" . $row->Pnr . "</td>";
             print "<td>" . $row->Horas . "</td>";
+            print   "<td>
+                        <button onclick=\"location.href='?page=editar_trabalha_em&id=".$row->idTrabalhaEm."';\" class='btn btn-warning'>Editar</button>
+                        <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir_trabalha_em&id=".$row->idTrabalhaEm."';}else{false;}\" class='btn btn-danger'>Excluir</button>
+                    </td>";
             print "</tr>";
         }
         print "</table>";
