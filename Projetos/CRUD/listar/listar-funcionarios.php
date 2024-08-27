@@ -17,6 +17,10 @@
             print "<td>" . $row->Endereco . "</td>";
             print "<td>" . $row->Sexo . "</td>";
             print "<td>" . $row->Salario . "</td>";
+            print   "<td>
+                        <button onclick=\"location.href='?page=editar_funcionario&id=".$row->Cpf."';\" class='btn btn-warning'>Editar</button>
+                        <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir_funcionario&id=".$row->Cpf."';}else{false;}\" class='btn btn-danger'>Excluir</button>
+                    </td>";
             print "</tr>";
         }
         print "</table>";

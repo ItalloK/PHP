@@ -272,6 +272,47 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
+
+        case 'editar_funcionario':
+            $Cpf = $_POST["Cpf"];
+            $Nome = $_POST["Nome"];
+            $Datanasc = $_POST["Datanasc"];
+            $Endereco = $_POST["Endereco"];
+            $Sexo = $_POST["Sexo"];
+            $Salario = $_POST["Salario"];
+
+            $sql = "UPDATE funcionario SET 
+                        Nome = '{$Nome}',
+                        Datanasc = '{$Datanasc}',
+                        Endereco = '{$Endereco}',
+                        Sexo = '{$Sexo}',
+                        Salario = {$Salario}
+                    WHERE 
+                        Cpf='".$_REQUEST["Cpf"]."'";
+
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Editado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+
+        case 'excluir_funcionario':
+            $sql = "DELETE FROM funcionario WHERE Cpf =".$_REQUEST["id"];
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Deletado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel deletar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+
+
     }
 
 ?>
