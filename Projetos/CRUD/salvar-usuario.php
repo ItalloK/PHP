@@ -312,6 +312,37 @@
             }
             break;
 
+        case 'editar_localizar_dep':
+            $Dnumero = $_POST["Dnumero"];
+            $Dlocal = $_POST["Dlocal"];
+
+            $sql = "UPDATE localizacao_dep SET 
+                        Dlocal = '{$Dlocal}'
+                    WHERE 
+                        Dnumero=".$_REQUEST["Dnumero"];
+
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Editado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+
+        case 'excluir_localizar_dep':
+            $sql = "DELETE FROM localizacao_dep WHERE Dnumero =".$_REQUEST["id"];
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Deletado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel deletar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
+
 
     }
 

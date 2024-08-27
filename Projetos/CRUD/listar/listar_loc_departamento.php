@@ -12,6 +12,10 @@
             print "<tr>";
             print "<td>" . $row->Dnumero . "</td>";
             print "<td>" . $row->Dlocal . "</td>";
+            print   "<td>
+                        <button onclick=\"location.href='?page=editar_localizar_dep&id=".$row->Dnumero."';\" class='btn btn-warning'>Editar</button>
+                        <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir_localizar_dep&id=".$row->Dnumero."';}else{false;}\" class='btn btn-danger'>Excluir</button>
+                    </td>";
             print "</tr>";
         }
         print "</table>";
