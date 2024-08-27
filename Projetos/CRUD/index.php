@@ -53,6 +53,9 @@
         case 'editar_departamento':
           echo "Editar Departamento";
           break;
+        case 'editar_dependente':
+          echo "Editar Dependente";
+          break;
         default:
           echo "CRUD PHP";
       }
@@ -157,6 +160,9 @@
               break;
             case "editar_departamento":
               include("editar/editar_departamento.php");
+              break;
+            case "editar_dependente":
+              include("editar/editar_dependente.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";

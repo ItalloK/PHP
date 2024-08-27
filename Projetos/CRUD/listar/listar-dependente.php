@@ -15,6 +15,10 @@
             print "<td>" . convertData($row->Datanasc) . "</td>";
             print "<td>" . $row->Parentesco . "</td>";
             print "<td>" . $row->funcionario_Cpf . "</td>";
+            print   "<td>
+                        <button onclick=\"location.href='?page=editar_dependente&id=".$row->idDependente."';\" class='btn btn-warning'>Editar</button>
+                        <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir_dependente&id=".$row->idDependente."';}else{false;}\" class='btn btn-danger'>Excluir</button>
+                    </td>";
             print "</tr>";
         }
         print "</table>";

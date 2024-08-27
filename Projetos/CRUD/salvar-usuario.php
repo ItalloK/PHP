@@ -222,6 +222,34 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
+
+
+
+        case 'editar_dependente':
+            $Nome = $_POST["Nome"];
+            $Sexo = $_POST["Sexo"];
+            $Datanasc = $_POST["Datanasc"];
+            $Parentesco = $_POST["Parentesco"];
+            $cpf_funcionario = $_POST["cpf_funcionario"];
+
+            $sql = "UPDATE dependente SET 
+                        Nome = '{$Nome}',
+                        Sexo = '{$Sexo}',
+                        Datanasc = '{$Datanasc}',
+                        Parentesco = '{$Parentesco}',
+                        funcionario_Cpf = '{$cpf_funcionario}'
+                    WHERE 
+                        idDependente=".$_REQUEST["idDependente"];
+
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Editado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
     }
 
 ?>
