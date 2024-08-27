@@ -1,9 +1,10 @@
 <h1>Cadastrar Funcionario</h1>
 <form action="?page=salvar" method="POST"> 
     <input type="hidden" name="acao" value="cadastrar_funcionario">
+
     <div class="mb-3">
         <label>CPF</label>
-        <input type="number" name="Cpf" class="form-control" placeholder="Apenas numeros" maxlength="11" required>
+        <input type="text" name="Cpf" class="form-control" placeholder="Apenas números" maxlength="11" pattern="\d{11}" title="O CPF deve ter 11 dígitos" required>
     </div>
     <div class="mb-3">
         <label>Nome</label>
