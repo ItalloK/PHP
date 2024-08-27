@@ -199,6 +199,29 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
+        case 'editar_departamento':
+            $cpf_gerente = $_POST["cpf_gerente"];
+            $Nome_Departamento = $_POST["Nome_Departamento"];
+            $Data_Inicio_Gerente = $_POST["Data_Inicio_Gerente"];
+            $loc_departamento = $_POST["loc_departamento"];
+
+            $sql = "UPDATE departamento SET 
+                        Cpf_gerente = '{$cpf_gerente}',
+                        Dnome = '{$Nome_Departamento}',
+                        Data_inicio_gerente = '{$Data_Inicio_Gerente}',
+                        LocDepartamento = {$loc_departamento}
+                    WHERE 
+                        Dnumero=".$_REQUEST["Dnumero"];
+
+            $res = $conn -> query($sql);
+            if($res == true){
+                print "<script>alert('Editado com sucesso');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }else{
+                print "<script>alert('Não foi possivel editar');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+            break;
     }
 
 ?>

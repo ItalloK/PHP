@@ -50,6 +50,9 @@
         case 'editar_projetos':
           echo "Editar Projetos";
           break;
+        case 'editar_departamento':
+          echo "Editar Departamento";
+          break;
         default:
           echo "CRUD PHP";
       }
@@ -151,6 +154,9 @@
               break;
             case "editar_projetos":
               include("editar/editar_projetos.php");
+              break;
+            case "editar_departamento":
+              include("editar/editar_departamento.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";
