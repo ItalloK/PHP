@@ -150,7 +150,7 @@
               include("cadastrar/cad_trabalha_em.php");
               break;
             case "editar_projetos":
-              include("editar_projetos.php");
+              include("editar/editar_projetos.php");
               break;
           default:
             print "<h1>CRUD PHP</h1>";
