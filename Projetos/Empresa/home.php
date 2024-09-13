@@ -25,28 +25,28 @@
                   <?php
                     switch(@$_REQUEST["page"]){
                       case "projeto-listar":
-                        include('projeto-listar.php');
+                        include('projeto/projeto-listar.php');
                         break;
                       case "projeto-salvar":
-                        include('projeto-salvar.php');
+                        include('projeto/projeto-salvar.php');
                         break;
                       case "funcionario-listar":
-                        include('funcionario-listar.php');
+                        include('funcionario/funcionario-listar.php');
                         break;
                       case "funcionario-create":
-                        include('funcionario-create.php');
+                        include('funcionario/funcionario-create.php');
                         break;
                       case "funcionario-editar":
-                        include('funcionario-edit.php');
+                        include('funcionario/funcionario-edit.php');
                         break;
                       case "dependente-listar":
-                        include('dependente-listar.php');
+                        include('dependente/dependente-listar.php');
                         break;
                       case "dependente-create":
-                        include('dependente-create.php');
+                        include('dependente/dependente-create.php');
                         break;
                       case "departamento-listar":
-                        include('departamento-listar.php');
+                        include('departamento/departamento-listar.php');
                         break;
                       default:
                         print"<h1>Bem vindos!!!</h1>";
