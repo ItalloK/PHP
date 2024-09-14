@@ -72,6 +72,9 @@
                       case "departamento-editar":
                         include('departamento/departamento-editar.php');
                         break;
+                      case "trabalhaem-listar":
+                        include("trabalhaem/trabalhaem-listar.php");
+                        break;
                       default:
                         print"<h1>Bem vindos!!!</h1>";
                     }
