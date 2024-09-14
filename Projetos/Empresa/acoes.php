@@ -13,6 +13,16 @@
 		$email = $_POST['email'];
 		$senha = md5($_POST['senha']);
 		
+		## Verificação de CPF ##
+		$sql = "SELECT Cpf FROM funcionario WHERE Cpf = {$cpf}";
+		$res = $conn->query($sql);
+		if ($res->num_rows > 0) {
+			echo "<script>alert('O CPF ja está em USO.');</script>";
+			echo "<script>location.href='home.php?page=funcionario-listar';</script>";
+			exit;
+		}
+		## Verificação de CPF ##
+
 		$sql = "INSERT INTO funcionario 
 					(Cpf, Nome, DataNascimento, Endereco, Sexo, Salario, Email, Senha) 
 				VALUES ('{$cpf}', '{$nome}', '{$datanascimento}', 
