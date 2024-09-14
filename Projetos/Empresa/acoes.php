@@ -189,7 +189,21 @@
 		exit;
 	}
 
-	
+
+	if (isset($_POST['editar_local_departamentos'])) {
+		$local = $_POST['nome'];
+		$id = $_POST['idLocal'];
+		$sql = "UPDATE local_departamento SET Nome = '{$local}' WHERE idLocalDepartamento = {$id}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=local_departamentos_listar');
+		} else {
+			print "<script>alert('Não foi possível atualizar o local');</script>";
+			print "<script>location.href='?page=local_departamentos_listar';</script>";
+		}
+		exit;
+	}
 
 ###################################### LOCAIS DEPARTAMENTO  ######################################
 ?>
