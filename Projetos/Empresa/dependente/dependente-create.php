@@ -9,7 +9,7 @@
 
 <form action="acoes.php" method="POST"> 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" maxlength="80" require>
         <label for="nome" class="form-label">Digite seu nome</label>
     </div>
 
@@ -27,7 +27,7 @@
     </div>
 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="parentesco" name="parentesco" placeholder="Digite o grau de parentesco">
+        <input type="text" class="form-control" id="parentesco" name="parentesco" placeholder="Digite o grau de parentesco" maxlength="8" require>
         <label for="parentesco" class="form-label">Digite o grau de parentesco:</label>
     </div>
 

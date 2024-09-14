@@ -6,7 +6,7 @@
 
 <form action="acoes.php" method="POST"> 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o local do Departamento">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o local do Departamento" maxlength="15" require>
         <label for="nome" class="form-label">Digite o local do Departamento</label>
     </div>
 

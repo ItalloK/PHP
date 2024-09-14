@@ -12,7 +12,7 @@
 <form action="acoes.php" method="POST"> 
     <input type="hidden" name="iddependente" value="<?php print $row->iddependente; ?>">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" value="<?=$row->Nome?>">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" value="<?=$row->Nome?>" maxlength="80" require>
         <label for="nome" class="form-label">Digite seu nome</label>
     </div>
 
@@ -29,7 +29,7 @@
     </div>
 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="parentesco" name="parentesco" placeholder="Digite o grau de parentesco" value="<?=$row->Parentesco?>">
+        <input type="text" class="form-control" id="parentesco" name="parentesco" placeholder="Digite o grau de parentesco" value="<?=$row->Parentesco?>" maxlength="8" require>
         <label for="parentesco" class="form-label">Digite o grau de parentesco:</label>
     </div>
 

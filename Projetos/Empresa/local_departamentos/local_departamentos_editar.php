@@ -16,7 +16,7 @@
     </div>
 
 
-    <input type="submit" name="editar_local_departamentos" class="btn btn-primary" value="Salvar">
+    <input type="submit" name="editar_local_departamentos" class="btn btn-primary" value="Salvar" maxlength="15" require>
     <input type="hidden" name="idLocal" value="<?php echo $row->idLocalDepartamento; ?>">
     <div class="col-12" id="link-container">
 </form>

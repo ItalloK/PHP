@@ -18,7 +18,7 @@
 
 <form action="acoes.php" method="POST"> 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do Departamento" value="<?=$row2->NomeDepartamento?>">
+        <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do Departamento" value="<?=$row2->NomeDepartamento?>" maxlength="15" require>
         <label for="local" class="form-label">Digite o nome do Departamento</label>
     </div>
 
