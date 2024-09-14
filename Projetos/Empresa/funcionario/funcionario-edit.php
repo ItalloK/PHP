@@ -19,7 +19,7 @@
         <div class="form-group mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" name="nome" 
-                placeholder="Digite seu nome" value="<?=$row->Nome?>" maxlength="80" require>
+                placeholder="Digite seu nome" value="<?=$row->Nome?>" maxlength="80" required>
         </div>
         <div class="form-group mb-3">
             <label for="datanascimento" class="form-label">Data de nascimento</label>
@@ -29,7 +29,7 @@
         <div class="form-group mb-3">
             <label for="endereco" class="form-label">Endereço</label>
             <input type="text" class="form-control" id="endereco" name="endereco" 
-                placeholder="Digite seu endereço" value="<?=$row->Endereco?>" maxlength="80" require>
+                placeholder="Digite seu endereço" value="<?=$row->Endereco?>" maxlength="80" required>
         </div>
         <div class="form-group mb-3">
             <label for="sexo" class="form-label">Sexo</label>
@@ -47,11 +47,11 @@
         <div class="form-group mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" 
-                placeholder="Digite seu email" value="<?=$row->Email?>" maxlength="80" require>
+                placeholder="Digite seu email" value="<?=$row->Email?>" maxlength="80" required>
         </div>
         <div class="form-group mb-3">
             <label for="password" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" maxlength="255" require>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" maxlength="255" required>
         </div>
         <div class="form-group mb-3">
             <label for="confirmpassword" class="form-label">Confirmar Senha</label>

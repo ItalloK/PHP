@@ -13,7 +13,7 @@
 
 <form action="acoes.php" method="POST"> 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do Departamento" maxlength="15" require>
+        <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do Departamento" maxlength="15" required>
         <label for="local" class="form-label">Digite o nome do Departamento</label>
     </div>
 

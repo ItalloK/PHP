@@ -8,11 +8,11 @@
 
 <form action="acoes.php" method="POST">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do Projeto" maxlength="15" require>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do Projeto" maxlength="15" required>
         <label for="nome" class="form-label">Digite o nome do Projeto</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do Projeto" maxlength="15" require>
+        <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do Projeto" maxlength="15" required>
         <label for="local" class="form-label">Digite o local do Projeto</label>
     </div>
     <div class="mb-3">
