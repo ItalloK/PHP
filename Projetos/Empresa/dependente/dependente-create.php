@@ -1,8 +1,9 @@
 <?php
   require('conexao.php');
 
-  $cpf = $_REQUEST["id"];
+  $cpf = $_REQUEST["cpf"];
 ?>
+
 
 <h2>Cadastro de Dependente</h2>
 
@@ -31,6 +32,7 @@
     </div>
 
     <input type="submit" name="create_dependente" class="btn btn-primary" value="Salvar">
+    <input type="hidden" name="cpf" value="<?php print $cpf; ?>">
     <div class="col-12" id="link-container">
 </form>
 
