@@ -30,14 +30,11 @@
                                 <td><?=$row->Local?></td>
                                 <td><?=$row->fkNumDepartamento?></td>
                                 <td>
-                                    <a href="projeto-editar.php?id=<?=$row->id?>" class="btn btn-sm btn-success">
-                                        Editar
-                                    </a>
+                                    <a href="projeto-salvar.php?id=<?=$row->idProjeto?>" class="btn btn-sm btn-success">Editar</a>
                                     <form action="projeto-excluir.php" method="POST" class="d-inline">
                                         <button onclick="return confirm('Tem certeza que deseja excluir?')" 
                                             type="submit" name="delete_projeto" 
-                                            value="<?=$row->id?>" class="btn btn-sm btn-danger">
-                                            Excluir
+                                            value="<?=$row->id?>" class="btn btn-sm btn-danger">Excluir
                                         </button>
                                     </form>
                                 </td>

@@ -7,7 +7,7 @@
 <div class="card-header">
     <h4>
         Lista de Funcionários
-        <a class="btn btn-primary" href="?page=dependente-create">Novo Dependente</a>
+        <a class="btn btn-primary" href="?page=dependente-create&id=<?$Cpf?>">Novo Dependente</a>
     </h4>
     <table class="table table-striped">
         <thead>

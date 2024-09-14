@@ -18,8 +18,6 @@
 				VALUES ('{$cpf}', '{$nome}', '{$datanascimento}', 
 					'{$endereco}', '{$sexo}', '{$salario}', '{$email}', '{$senha}')";
 		
-		//print($sql);
-		
 		$res = $conn->query($sql);
 		if ($res==true) {
 			header('Location: home.php?page=funcionario-listar');
@@ -83,6 +81,27 @@
 				print "<script>alert('Não foi possível excluir o cadastrado do funcionário.');</script>";
 				print "<script>location.href='home.php?page=funcionario-listar';</script>";
 			}
+		}
+		exit;
+	}
+
+
+
+	if (isset($_POST['create_dependente'])) {
+		$nome = $_POST['nome'];
+		$sexo = $_POST['sexo'];
+		$datanasc = $_POST['datanascimento'];
+		$parentesco = $_POST['parentesco'];
+		$fkCpf = $_POST['cpff'];
+
+		$sql = "INSERT INTO dependente (Nome, Sexo, Datanasc, Parentesco, fkCpf) VALUES ('{$nome}', '{$sexo}', '{$datanasc}', '{$parentesco}', '{$fkCpf}')";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=funcionario-listar');
+		} else {
+			print "<script>alert('Não foi possível cadastrar o dependente');</script>";
+			print "<script>location.href='?page=dependente-create';</script>";
 		}
 		exit;
 	}
