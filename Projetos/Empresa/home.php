@@ -51,6 +51,12 @@
                       case "departamento-listar":
                         include('departamento/departamento-listar.php');
                         break;
+                      case "local_departamentos_listar":
+                        include('local_departamentos/local_departamentos_listar.php');
+                        break;
+                      case "local_departamentos_create":
+                        include('local_departamentos/local_departamentos_create.php');
+                        break;
                       default:
                         print"<h1>Bem vindos!!!</h1>";
                     }

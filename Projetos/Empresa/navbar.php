@@ -16,7 +16,7 @@
                     <a class="nav-link active" aria-current="page" href="?page=funcionario-listar">Funcionários</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="?page=local-listar">Local Departamentos</a>
+                    <a class="nav-link active" aria-current="page" href="?page=local_departamentos_listar">Local Departamentos</a>
                 </li>
             </ul>
         </div>

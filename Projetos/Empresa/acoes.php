@@ -148,4 +148,24 @@
 		exit;
 	}
 ###################################### DEPENDENTE  ######################################
+
+###################################### LOCAIS DEPARTAMENTO  ######################################
+
+	if (isset($_POST['create_local_departamentos'])) {
+		$local = $_POST['nome'];
+		$sql = "INSERT INTO local_departamento (Nome) VALUES ('{$local}')";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=local_departamentos_listar');
+		} else {
+			print "<script>alert('Não foi possível cadastrar o local');</script>";
+			print "<script>location.href='?page=local_departamentos_listar';</script>";
+		}
+		exit;
+	}
+
+	
+
+###################################### LOCAIS DEPARTAMENTO  ######################################
 ?>
