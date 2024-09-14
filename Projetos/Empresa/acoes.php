@@ -328,6 +328,14 @@
 	if (isset($_POST['departamento_deletar'])) {
 		$id = $_POST['departamento_deletar'];
 
+		$sql = "SELECT fkNumDepartamento FROM projeto WHERE fkNumDepartamento = {$id}";
+		$res = $conn->query($sql);
+		if ($res->num_rows > 0) {
+			echo "<script>alert('O local está vinculado a um projeto e não é possivel deletar.');</script>";
+			echo "<script>location.href='home.php?page=departamento-listartodos';</script>";
+			exit;
+		}
+
 		$sql = "DELETE FROM departamento WHERE NumDepartamento = {$id}";
 		echo $sql;
 		$res = $conn->query($sql);
