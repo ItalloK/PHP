@@ -165,6 +165,30 @@
 		exit;
 	}
 
+	if (isset($_POST['delete_local_departamentos'])) {
+		$id = $_POST['delete_local_departamentos'];
+
+		$sql = "SELECT fkidLocalDepartamento FROM departamento WHERE fkidLocalDepartamento = {$id}";
+		$res = $conn->query($sql);
+	
+		if ($res->num_rows > 0) {
+			echo "<script>alert('O local está vinculado a um departamento e não é possivel deletar.');</script>";
+			echo "<script>location.href='home.php?page=local_departamentos_listar';</script>";
+			exit;
+		}
+
+		$sql = "DELETE FROM local_departamento WHERE idLocalDepartamento = {$id}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=local_departamentos_listar');
+		} else {
+			print "<script>alert('Não foi possível deletar o local');</script>";
+			print "<script>location.href='?page=local_departamentos_listar';</script>";
+		}
+		exit;
+	}
+
 	
 
 ###################################### LOCAIS DEPARTAMENTO  ######################################
