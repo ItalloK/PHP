@@ -11,12 +11,12 @@
 
 <form action="acoes.php" method="POST"> 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o local do Departamento" value="<?php echo $row->Nome; ?>">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o local do Departamento" value="<?php echo $row->Nome; ?>" maxlength="15" require>
         <label for="nome" class="form-label">Digite o local do Departamento</label>
     </div>
 
 
-    <input type="submit" name="editar_local_departamentos" class="btn btn-primary" value="Salvar" maxlength="15" require>
+    <input type="submit" name="editar_local_departamentos" class="btn btn-primary" value="Salvar">
     <input type="hidden" name="idLocal" value="<?php echo $row->idLocalDepartamento; ?>">
     <div class="col-12" id="link-container">
 </form>
