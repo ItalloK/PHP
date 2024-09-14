@@ -75,6 +75,12 @@
                       case "trabalhaem-listar":
                         include("trabalhaem/trabalhaem-listar.php");
                         break;
+                      case "trabalhaem-create":
+                        include("trabalhaem/trabalhaem-create.php");
+                        break;
+                      case "trabalhaem-editar":
+                        include("trabalhaem/trabalhaem-editar.php");
+                        break;
                       default:
                         print"<h1>Bem vindos!!!</h1>";
                     }
