@@ -30,6 +30,10 @@
                                 <td><?=$row->Local?></td>
                                 <td><?=$row->fkNumDepartamento?></td>
                                 <td>
+                                <a href="?page=departamento-listar&id=<?=$row->fkNumDepartamento?>" class="btn btn-secondary btn-sm">
+                                    <span class="bi-eye-fill"></span>
+                                    &nbsp;Departamento
+                                </a>
                                     <a href="?page=projeto-editar&id=<?=$row->idProjeto?>" class="btn btn-sm btn-success">Editar</a>
                                     <form action="acoes.php" method="POST" class="d-inline">
                                         <button onclick="return confirm('Tem certeza que deseja excluir?')" 
