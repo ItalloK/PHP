@@ -382,6 +382,23 @@
 		}
 		exit;
 	}
+
+	if (isset($_POST['trabalhaem_editar'])) {
+		$cpf = $_POST['cpf'];
+		$hora = $_POST['hora'];
+		$idprojeto = $_POST['idprojeto'];
+		$idTrabalhaEm = $_POST['idtrabalhaem'];
+		$sql = "UPDATE trabalha_em SET fkCpf = '{$cpf}', fkIdProjeto = '{$idprojeto}', Horas = {$hora} WHERE idTrabalhaEm = {$idTrabalhaEm}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=funcionario-listar');
+		} else {
+			print "<script>alert('Não foi possivel criar o trabalho');</script>";
+			print "<script>location.href='?page=funcionario-listar';</script>";
+		}
+		exit;
+	}
 	
 
 ###################################### TRABALHA EM  ######################################
