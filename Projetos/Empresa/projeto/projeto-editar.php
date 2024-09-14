@@ -20,7 +20,7 @@
         <label for="local" class="form-label">Digite o local do Projeto</label>
     </div>
     <div class="mb-3">
-        <select name="num-projeto" class="form-control" required>
+        <select name="num-departamento" class="form-control" required>
             <option value="" disabled selected hidden>Selecione o Departamento</option>
             <?php
             $sql = "SELECT NumDepartamento, NomeDepartamento FROM departamento";
@@ -36,7 +36,8 @@
         </select>
     </div>
 
-    <input type="submit" name="projeto_create" class="btn btn-primary" value="Salvar">
+    <input type="submit" name="projeto_edit" class="btn btn-primary" value="Salvar">
+    <input type="hidden" name="idProjeto" value="<?php echo $id; ?>">
 </form>
 
 <div class="col-md-6 mt-3">

@@ -261,24 +261,18 @@
 	}
 
 	if (isset($_POST['projeto_edit'])) {
-		$idProjeto = $_POST['projeto_delete'];
+		$idProjeto = $_POST['idProjeto'];
+		$nome = $_POST['nome'];
+		$local = $_POST['local'];
+		$numDepartamento = $_POST['num-departamento'];
 
-		$sql = "SELECT idTrabalhaEm FROM trabalha_em WHERE fkIdProjeto = {$idProjeto}";
-		$res = $conn->query($sql);
-	
-		if ($res->num_rows > 0) {
-			echo "<script>alert('O local está vinculado a um trabalho e não é possivel deletar.');</script>";
-			echo "<script>location.href='home.php?page=projeto-listar';</script>";
-			exit;
-		}
-
-		$sql = "DELETE FROM projeto WHERE idProjeto = {$idProjeto}";
+		$sql = "UPDATE projeto SET Nome = '{$nome}', Local = '{$local}', fkNumDepartamento = {$numDepartamento} WHERE idProjeto = {$idProjeto}";
 		echo $sql;
 		$res = $conn->query($sql);
 		if ($res==true) {
 			header('Location: home.php?page=projeto-listar');
 		} else {
-			print "<script>alert('Não foi possivel deletar o projeto');</script>";
+			print "<script>alert('Não foi possivel atualizar o projeto');</script>";
 			print "<script>location.href='?page=projeto-listar';</script>";
 		}
 		exit;
