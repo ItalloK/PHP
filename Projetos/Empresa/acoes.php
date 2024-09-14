@@ -2,7 +2,7 @@
 	session_start();
 	require 'conexao.php';
 
-	// FUNCIONÁRIO
+###################################### FUNCIONARIO  ######################################
 	if (isset($_POST['create_funcionario'])) {
 		$cpf = $_POST['cpf'];
 		$nome = $_POST['nome'];
@@ -63,7 +63,7 @@
 		$cpf = $_POST['delete_funcionario'];
 		$sql = "SELECT * FROM dependente WHERE fkCpf = '{$cpf}';";
 		$res = $conn->query($sql);
-		
+
 		if ($res->num_rows > 0) {
 			echo "<script>alert('O Funcionário possui dependente, não é possível excluir o cadastrado.');</script>";
 			echo "<script>location.href='home.php?page=funcionario-listar';</script>";
@@ -81,14 +81,18 @@
 		}
 		exit;
 	}
+###################################### FUNCIONARIO  ######################################
 
+
+###################################### DEPENDENTE  ######################################
 
 	if (isset($_POST['create_dependente'])) {
+		$fkCpf = $_POST['cpf'];
 		$nome = $_POST['nome'];
 		$sexo = $_POST['sexo'];
 		$datanasc = $_POST['datanascimento'];
 		$parentesco = $_POST['parentesco'];
-		$fkCpf = $_POST['cpff'];
+		
 
 		$sql = "INSERT INTO dependente (Nome, Sexo, Datanasc, Parentesco, fkCpf) VALUES ('{$nome}', '{$sexo}', '{$datanasc}', '{$parentesco}', '{$fkCpf}')";
 		echo $sql;
@@ -102,4 +106,8 @@
 		exit;
 	}
 
+
+
+
+###################################### DEPENDENTE  ######################################
 ?>

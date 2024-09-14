@@ -6,8 +6,8 @@
 
 <div class="card-header">
     <h4>
-        Lista de Funcionários
-        <a class="btn btn-primary" href="?page=dependente-create&id=<?$Cpf?>">Novo Dependente</a>
+        Lista de Dependentes
+        <a class="btn btn-primary" href="?page=dependente-create&cpf=<?= urlencode($cpf) ?>">Novo Dependente</a>
     </h4>
     <table class="table table-striped">
         <thead>
