@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
                 <?php
-                    $sql = "SELECT Nome, Local, fkNumDepartamento FROM projeto";
+                    $sql = "SELECT * FROM projeto";
                     $res = $conn->query($sql);
                     $qtd = $res->num_rows;
                     
@@ -30,11 +30,12 @@
                                 <td><?=$row->Local?></td>
                                 <td><?=$row->fkNumDepartamento?></td>
                                 <td>
-                                    <a href="projeto-salvar.php?id=<?=$row->idProjeto?>" class="btn btn-sm btn-success">Editar</a>
-                                    <form action="projeto-excluir.php" method="POST" class="d-inline">
+                                    <a href="?page=projeto-editar&id=<?=$row->idProjeto?>" class="btn btn-sm btn-success">Editar</a>
+                                    <form action="acoes.php" method="POST" class="d-inline">
                                         <button onclick="return confirm('Tem certeza que deseja excluir?')" 
-                                            type="submit" name="delete_projeto" 
-                                            value="<?=$row->id?>" class="btn btn-sm btn-danger">Excluir
+                                            type="submit" name="projeto_delete" 
+                                            value="<?=$row->idProjeto?>" class="btn btn-danger btn-sm">
+                                        <span class="bi-trash3-fill"></span>&nbsp;Excluir
                                         </button>
                                     </form>
                                 </td>
