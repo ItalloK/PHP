@@ -216,4 +216,42 @@
 	}
 
 ###################################### LOCAIS DEPARTAMENTO  ######################################
+
+
+###################################### PROJETO  ######################################
+
+	if (isset($_POST['projeto_create'])) {
+		$nome = $_POST['nome'];
+		$local = $_POST['local'];
+		$numProjeto = $_POST['num-projeto'];
+		$sql = "INSERT INTO projeto (Nome, Local, fkNumDepartamento) VALUES ('{$nome}', '{$local}', {$numProjeto})";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=projeto-listar');
+		} else {
+			print "<script>alert('Não foi possível criar o projeto');</script>";
+			print "<script>location.href='?page=projeto-listar';</script>";
+		}
+		exit;
+	}
+
+	if (isset($_POST['projeto_delete'])) {
+		$nome = $_POST['nome'];
+		$local = $_POST['local'];
+		$numProjeto = $_POST['num-projeto'];
+		$sql = "INSERT INTO projeto (Nome, Local, fkNumDepartamento) VALUES ('{$nome}', '{$local}', {$numProjeto})";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=projeto-listar');
+		} else {
+			print "<script>alert('Não foi possível criar o projeto');</script>";
+			print "<script>location.href='?page=projeto-listar';</script>";
+		}
+		exit;
+	}
+
+
+###################################### PROJETO  ######################################
 ?>

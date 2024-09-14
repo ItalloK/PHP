@@ -27,8 +27,11 @@
                       case "projeto-listar":
                         include('projeto/projeto-listar.php');
                         break;
-                      case "projeto-salvar":
-                        include('projeto/projeto-salvar.php');
+                      case "projeto-create":
+                        include('projeto/projeto-create.php');
+                        break;
+                      case "projeto-editar":
+                        include('projeto/projeto-editar.php');
                         break;
                       case "funcionario-listar":
                         include('funcionario/funcionario-listar.php');

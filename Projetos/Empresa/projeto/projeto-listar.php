@@ -6,7 +6,7 @@
         <div class="card-header">
             <h4>
                 Projetos 
-                <a class="btn btn-primary" href="projeto-salvar.php">Novo Projeto</a>
+                <a class="btn btn-primary" href="?page=projeto-create">Novo Projeto</a>
             </h4>
             <table class="table table-striped">
                 <thead>
@@ -42,7 +42,6 @@
                 <?php
                         }
                     } else {
-                        // Optionally, show a message if no results are found
                         echo "<tr><td colspan='4'>Nenhum projeto encontrado.</td></tr>";
                     }
                 ?>
