@@ -13,11 +13,15 @@
                     <tr>
                         <th>Nome do Departamento</th>
                         <th>Data do Inicio do Gerente</th>
+                        <th>Local Departamento</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <?php
-                    $sql = "SELECT * FROM departamento";
+                    $sql = "SELECT departamento.*, local_departamento.Nome
+                            FROM departamento
+                            INNER JOIN local_departamento
+                            ON departamento.fkidLocalDepartamento = local_departamento.idLocalDepartamento";
                     $res = $conn->query($sql);
                     $qtd = $res->num_rows;
                     
@@ -27,6 +31,7 @@
                             <tr>
                                 <td><?=$row->NomeDepartamento?></td>
                                 <td><?=date('d/m/Y', strtotime($row->DataInicioGerente))?></td>
+                                <td><?=$row->Nome?></td>
                                 <td>
                                     <a href="?page=departamento-editar&id=<?=$row->NumDepartamento?>" class="btn btn-sm btn-success">Editar</a>
                                     <form action="acoes.php" method="POST" class="d-inline">
