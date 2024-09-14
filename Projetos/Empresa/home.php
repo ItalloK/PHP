@@ -63,6 +63,15 @@
                       case "local_departamentos_editar":
                         include('local_departamentos/local_departamentos_editar.php');
                         break;
+                      case "departamento-listartodos":
+                        include('departamento/departamento-listartodos.php');
+                        break;
+                      case "departamento-create":
+                        include('departamento/departamento-create.php');
+                        break;
+                      case "departamento-editar":
+                        include('departamento/departamento-editar.php');
+                        break;
                       default:
                         print"<h1>Bem vindos!!!</h1>";
                     }

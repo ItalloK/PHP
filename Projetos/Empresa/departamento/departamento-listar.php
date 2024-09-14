@@ -1,10 +1,6 @@
 <?php
   require('conexao.php');
-
   $numDepartamento = $_REQUEST["id"];
-
-  // receba a fkNumDepartamento
-
 ?>
 
 <div class="card-header">
