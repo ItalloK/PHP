@@ -368,14 +368,16 @@
 
 	if (isset($_POST['trabalhaem_create'])) {
 		$cpf = $_POST['cpf'];
+		$hora = $_POST['hora'];
+		$idprojeto = $_POST['idprojeto'];
 
-		$sql = "DELETE FROM trabalha_em WHERE idTrabalhaEm = {$id}";
+		$sql = "INSERT INTO trabalha_em (fkCpf, fkIdProjeto, Horas) VALUES ('{$cpf}',{$idprojeto},{$hora})";
 		echo $sql;
 		$res = $conn->query($sql);
 		if ($res==true) {
 			header('Location: home.php?page=funcionario-listar');
 		} else {
-			print "<script>alert('Não foi possivel deletar o trabalho');</script>";
+			print "<script>alert('Não foi possivel criar o trabalho');</script>";
 			print "<script>location.href='?page=funcionario-listar';</script>";
 		}
 		exit;

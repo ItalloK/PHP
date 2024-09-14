@@ -1,26 +1,24 @@
 <?php
     require('conexao.php');
     $cpf = $_REQUEST["cpf"];
+
+    $sql = "SELECT idProjeto, Nome FROM projeto";
+    $result = $conn->query($sql);
 ?>
 
 <h2>Criar Trabalho</h2>
 
 <form action="acoes.php" method="POST">
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do Projeto">
-        <label for="nome" class="form-label">Digite o nome do Projeto</label>
-    </div>
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do Projeto">
-        <label for="local" class="form-label">Digite o local do Projeto</label>
+    <div class="form-group mb-3">
+        <input type="number" class="form-control" id="hora" name="hora" placeholder="Digite a quantidade de horas">
     </div>
     <div class="mb-3">
-        <select name="num-projeto" class="form-control" required>
-            <option value="" disabled selected hidden>Selecione o Departamento</option>
+        <select name="idprojeto" class="form-control" required>
+            <option value="" disabled selected hidden>Selecione o Projeto</option>
             <?php
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<option value='" . $row["NumDepartamento"] . "'>" . $row["NomeDepartamento"]. "</option>";
+                    echo "<option value='" . $row["idProjeto"] . "'>" . $row["Nome"]. "</option>";
                 }
             } else {
                 echo "<option value='' disabled>Nenhum projeto encontrado</option>";
