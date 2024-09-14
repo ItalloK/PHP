@@ -347,7 +347,24 @@
 		}
 		exit;
 	}
-	
-
 ###################################### DEPARTAMENTO  ######################################
+
+###################################### TRABALHA EM  ######################################
+
+	if (isset($_POST['delete_trabalhaem'])) {
+		$id = $_POST['delete_trabalhaem'];
+
+		$sql = "DELETE FROM trabalha_em WHERE idTrabalhaEm = {$id}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=funcionario-listar');
+		} else {
+			print "<script>alert('Não foi possivel deletar o trabalho');</script>";
+			print "<script>location.href='?page=funcionario-listar';</script>";
+		}
+		exit;
+	}
+
+###################################### TRABALHA EM  ######################################
 ?>

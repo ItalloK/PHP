@@ -11,16 +11,31 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Sexo</th>
-                <th>Data de Nascimento</th>
-                <th>Parentesco</th>
+                <th>Nome do Projeto</th>
+                <th>Horas de Trabalho</th>
                 <th>Ação</th>
             </tr>
         </thead>
         <?php
-            $sql = "Select iddependente, Nome, Sexo, Datanasc, Parentesco 
-                    from dependente where fkCpf = '" . $cpf . "'";
+            $sql = "SELECT 
+                        dbempresa.funcionario.Cpf AS FuncionarioCpf,
+                        dbempresa.funcionario.Nome AS FuncionarioNome,
+                        dbempresa.trabalha_em.idTrabalhaEm,
+                        dbempresa.trabalha_em.Horas,
+                        dbempresa.projeto.Nome AS NomeProjeto,
+                        dbempresa.projeto.Local AS LocalProjeto
+                    FROM 
+                        dbempresa.funcionario
+                    INNER JOIN 
+                        dbempresa.trabalha_em 
+                    ON 
+                        dbempresa.funcionario.Cpf = dbempresa.trabalha_em.fkCpf
+                    INNER JOIN 
+                        dbempresa.projeto
+                    ON 
+                        dbempresa.trabalha_em.fkIdProjeto = dbempresa.projeto.idProjeto
+                    WHERE 
+                        dbempresa.funcionario.Cpf = '{$cpf}'";
             $res = $conn->query($sql);
             $qtd = $res->num_rows;
 
@@ -28,10 +43,8 @@
                 while($row = $res->fetch_object()){
         ?>
                     <tr>
-                        <td><?=$row->Nome?></td>
-                        <td><?=$row->Sexo?></td>
-                        <td><?=date('d/m/Y', strtotime($row->Datanasc))?></td>
-                        <td><?=$row->Parentesco?></td>
+                        <td><?=$row->NomeProjeto?></td>
+                        <td><?=$row->Horas?></td>
                         <td>
                             <a href="?page=trabalhaem-editar&id=<?=$cpf?>" class="btn btn-success btn-sm">
                                 <span class="bi-pencil-fill"></span>
@@ -40,7 +53,7 @@
                             <form action="acoes.php" method="POST" class="d-inline">
                                 <button onclick="return confirm('Tem certeza que deseja excluir?')" 
                                     type="submit" name="delete_trabalhaem" 
-                                    value="<?=$cpf?>" class="btn btn-danger btn-sm">
+                                    value="<?=$row->idTrabalhaEm?>" class="btn btn-danger btn-sm">
                                 <span class="bi-trash3-fill"></span>&nbsp;Excluir
                                 </button>
                             </form>
