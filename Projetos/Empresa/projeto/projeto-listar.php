@@ -13,7 +13,6 @@
                     <tr>
                         <th>Nome</th>
                         <th>Local</th>
-                        <th>Número do Departamento</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -28,7 +27,6 @@
                             <tr>
                                 <td><?=$row->Nome?></td>
                                 <td><?=$row->Local?></td>
-                                <td><?=$row->fkNumDepartamento?></td>
                                 <td>
                                 <a href="?page=departamento-listar&id=<?=$row->fkNumDepartamento?>" class="btn btn-secondary btn-sm">
                                     <span class="bi-eye-fill"></span>

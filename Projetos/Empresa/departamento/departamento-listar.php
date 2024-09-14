@@ -1,72 +1,57 @@
-<body>
-    <div class="container col-11 col-md-9" id="form-container">
-        <div class="row align-items-center gx-5">
-            <div class="col-md-6 order-md-2">
+<?php
+  require('conexao.php');
 
-                <div>
-                    <h4>
-                        Departamento
-                        <a class="btn btn-primary" href="departamento-salvar.php">Novo Departamento</a>
-                    </h4>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Data Nascimento</th>
-                                <th>Sexo</th>
-                                <th>Ação</th>
-                            </tr>
-                        </thead>
-                        <?php
-                            $sql = "Select * from funcionario";
+  $numDepartamento = $_REQUEST["id"];
 
-                            $res = $conn->query($sql);
+  // receba a fkNumDepartamento
 
-                            $qtd = $res->num_rows;
+?>
 
-                            if($qtd > 0){
-                                while($row = $res->fetch_object()){
-                                    print "<tr >";
-                                    print "<td >".$row->nome."</td>";
-                                    print "<td >".$row->datanascimento."</td>";
-                                    print "<td >".$row->sexo."</td>";
-                                    print "<td>";
-                                    print "<a class='btn btn-sm btn-info'>Editar</a>";
-                                    print "<a class='btn btn-sm btn-danger'>Excluir</a>";
-                                    print "</td>";
-                                    print "</tr>";
-                                }
-                            }
-                                
-                        ?>
-                    </table>
-                </div>
+<div class="card-header">
+    <h4>Departamento</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome do Departamento</th>
+                <th>Data de Inicio do Gerente</th>
+            </tr>
+        </thead>
+        <?php
+            $sql = "SELECT * FROM departamento WHERE NumDepartamento = {$numDepartamento}";
+            $res = $conn->query($sql);
+            $qtd = $res->num_rows;
 
-                <a class="btn btn-primary">Novo Paciente</a>
-            </div>
-            <div class="col-md-6 order-md-1">
-                <div class="col-12">
-                    <img src="/empresa/img/list_paciente.avif" alt="Hello New Customer" class="img-fluid">
-                </div>
-                <div class="col-12" id="link-container">
-                    <a href="/empresa/home.php">Voltar a home</a>
-                </div>
+            if($qtd > 0){
+                while($row = $res->fetch_object()){
+        ?>
+                    <tr>
+                        <td><?=$row->NomeDepartamento?></td>
+                        <td><?=date('d/m/Y', strtotime($row->DataInicioGerente))?></td>
+                        <td>
+                            <a href="?page=dependente-editar&id=<?=$row->iddependente?>" class="btn btn-success btn-sm">
+                                <span class="bi-pencil-fill"></span>
+                                &nbsp;Editar
+                            </a>
+                            <form action="acoes.php" method="POST" class="d-inline">
+                                <button onclick="return confirm('Tem certeza que deseja excluir?')" 
+                                    type="submit" name="delete_dependente" 
+                                    value="<?=$row->iddependente?>" class="btn btn-danger btn-sm">
+                                <span class="bi-trash3-fill"></span>&nbsp;Excluir
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+        <?php
+                }
+            }
+        ?>
+    </table>
+    <div class="col-md-6">
+        <div class="row align-items-center">
+            <div class="col-12" id="link-container">
+                <a href="?page=projeto-listar">Voltar para os Projetos</a>
             </div>
         </div>
     </div>
 
-
-    <div class="container">
-        <div>
-            <div class="alert alert-info" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign"></span>
-                0 funcionário cadastrado!
-            </div>
-        </div>
-        <hr/>
-        <footer class="footer">
-            <p>&copy; 2024 Prof. Edilson Lima</p>
-        </footer>
-
-    </div>
-</body>
+</div>
