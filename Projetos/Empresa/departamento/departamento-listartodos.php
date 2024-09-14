@@ -26,7 +26,7 @@
                 ?>
                             <tr>
                                 <td><?=$row->NomeDepartamento?></td>
-                                <td><?=$row->DataInicioGerente?></td>
+                                <td><?=date('d/m/Y', strtotime($row->DataInicioGerente))?></td>
                                 <td>
                                     <a href="?page=departamento-editar&id=<?=$row->NumDepartamento?>" class="btn btn-sm btn-success">Editar</a>
                                     <form action="acoes.php" method="POST" class="d-inline">

@@ -278,6 +278,29 @@
 		exit;
 	}
 
-
 ###################################### PROJETO  ######################################
+
+
+###################################### DEPARTAMENTO  ######################################
+
+	if (isset($_POST['departamento_create'])) {
+		$nome = $_POST['local'];
+		$cpfGerente = $_POST['cpfGerente'];
+		$datainicio = $_POST['datainicio'];
+		$localdepartamento = $_POST['localdepartamento'];
+
+		$sql = "INSERT INTO departamento (fkCpf, NomeDepartamento, DataInicioGerente, fkidLocalDepartamento) 
+				VALUES ('{$cpfGerente}', '{$nome}', '{$datainicio}', {$localdepartamento})";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=departamento-listartodos');
+		} else {
+			print "<script>alert('Não foi possivel criar o departamento');</script>";
+			print "<script>location.href='?page=departamento-listartodos';</script>";
+		}
+		exit;
+	}
+
+###################################### DEPARTAMENTO  ######################################
 ?>
