@@ -49,10 +49,6 @@
 					Senha = '{$senha}' 
 				WHERE Cpf = '{$cpf}';";
 		
-		//print_r($_POST);
-		//print('CPF: '. $_POST['cpf']);
-		//print($sql);
-		
 		$res = $conn->query($sql);
 		if ($res==true) {
 			header('Location: home.php?page=funcionario-listar');
@@ -65,26 +61,26 @@
 
 	if (isset($_POST['delete_funcionario'])) {
 		$cpf = $_POST['delete_funcionario'];
-
 		$sql = "SELECT * FROM dependente WHERE fkCpf = '{$cpf}';";
 		$res = $conn->query($sql);
-		if ($res==true) {
-			print "<script>alert('O Funcionário possui dependente, não é possível excluir o cadastrado.');</script>";
-			print "<script>location.href='home.php?page=funcionario-listar';</script>";
+		
+		if ($res->num_rows > 0) {
+			echo "<script>alert('O Funcionário possui dependente, não é possível excluir o cadastrado.');</script>";
+			echo "<script>location.href='home.php?page=funcionario-listar';</script>";
 		} else {
-			//não possui dependente
 			$sql = "DELETE FROM funcionario WHERE Cpf = '{$cpf}'";
 			$res = $conn->query($sql);
-			if ($res==true) {
+	
+			if ($res === TRUE) {
 				header('Location: home.php?page=funcionario-listar');
+				exit;
 			} else {
-				print "<script>alert('Não foi possível excluir o cadastrado do funcionário.');</script>";
-				print "<script>location.href='home.php?page=funcionario-listar';</script>";
+				echo "<script>alert('Não foi possível excluir o cadastrado do funcionário.');</script>";
+				echo "<script>location.href='home.php?page=funcionario-listar';</script>";
 			}
 		}
 		exit;
 	}
-
 
 
 	if (isset($_POST['create_dependente'])) {
