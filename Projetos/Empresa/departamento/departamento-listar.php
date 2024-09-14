@@ -24,7 +24,7 @@
                         <td><?=$row->NomeDepartamento?></td>
                         <td><?=date('d/m/Y', strtotime($row->DataInicioGerente))?></td>
                         <td>
-                            <a href="?page=dependente-editar&id=<?=$row->NumDepartamento?>" class="btn btn-success btn-sm">
+                            <a href="?page=departamento-editar&id=<?=$row->NumDepartamento?>" class="btn btn-success btn-sm">
                                 <span class="bi-pencil-fill"></span>
                                 &nbsp;Editar
                             </a>
