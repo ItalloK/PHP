@@ -7,7 +7,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    
     <header>
         <div class="container" id="nav-container">
           <?php
