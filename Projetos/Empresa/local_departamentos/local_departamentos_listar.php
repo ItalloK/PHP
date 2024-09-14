@@ -40,6 +40,8 @@
                     </tr>
         <?php
                 }
+            } else {
+                echo "<tr><td colspan='4'>Nenhum local de departamento encontrado.</td></tr>";
             }
         ?>
     </table>

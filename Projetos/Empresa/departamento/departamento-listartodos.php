@@ -46,7 +46,7 @@
                 <?php
                         }
                     } else {
-                        echo "<tr><td colspan='4'>Nenhum projeto encontrado.</td></tr>";
+                        echo "<tr><td colspan='4'>Nenhum departamento encontrado.</td></tr>";
                     }
                 ?>
             </table>

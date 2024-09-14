@@ -53,6 +53,8 @@
                     </tr>
         <?php
                 }
+            } else {
+                echo "<tr><td colspan='4'>Nenhum funcionario encontrado.</td></tr>";
             }
         ?>
     </table>
