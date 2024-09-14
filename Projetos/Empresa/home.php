@@ -45,6 +45,9 @@
                       case "dependente-create":
                         include('dependente/dependente-create.php');
                         break;
+                      case "dependente-editar":
+                        include('dependente/dependente-editar.php');
+                        break;
                       case "departamento-listar":
                         include('departamento/departamento-listar.php');
                         break;

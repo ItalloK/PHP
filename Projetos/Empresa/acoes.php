@@ -106,7 +106,24 @@
 		exit;
 	}
 
-
+	if (isset($_POST['edit_dependente'])) {
+		$idDependente = $_POST['iddependente'];
+		$nome = $_POST['nome'];
+		$sexo = $_POST['sexo'];
+		$datanasc = $_POST['datanascimento'];
+		$parentesco = $_POST['parentesco'];
+		
+		$sql = "UPDATE dependente SET Nome = '{$nome}', Sexo = '{$sexo}', Datanasc = '{$datanasc}', Parentesco = '{$parentesco}' WHERE iddependente = {$idDependente}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=funcionario-listar');
+		} else {
+			print "<script>alert('Não foi possível cadastrar o dependente');</script>";
+			print "<script>location.href='?page=dependente-create';</script>";
+		}
+		exit;
+	}
 
 
 ###################################### DEPENDENTE  ######################################
