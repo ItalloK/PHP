@@ -34,7 +34,7 @@
                                 <span class="bi-eye-fill"></span>
                                 &nbsp;Dependente
                             </a>
-                            <a href="?page=trabalhaem-listar&id=<?=$row->Cpf?>" class="btn btn-secondary btn-sm">
+                            <a href="?page=trabalhaem-listar&id=<?=$row->Cpf?>" class="btn btn-warning btn-sm">
                                 <span class="bi-eye-fill"></span>
                                 &nbsp;Trabalha Em
                             </a>
