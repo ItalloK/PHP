@@ -120,7 +120,22 @@
 			header('Location: home.php?page=funcionario-listar');
 		} else {
 			print "<script>alert('Não foi possível cadastrar o dependente');</script>";
-			print "<script>location.href='?page=dependente-create';</script>";
+			print "<script>location.href='?page=funcionario-listar';</script>";
+		}
+		exit;
+	}
+
+	if (isset($_POST['delete_dependente'])) {
+		$idDependente = $_POST['delete_dependente'];
+		
+		$sql = "DELETE FROM dependente WHERE iddependente = {$idDependente}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=funcionario-listar');
+		} else {
+			print "<script>alert('Não foi possível deletar o dependente');</script>";
+			print "<script>location.href='?page=funcionario-listar';</script>";
 		}
 		exit;
 	}
