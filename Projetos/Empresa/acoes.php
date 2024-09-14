@@ -302,5 +302,44 @@
 		exit;
 	}
 
+
+	if (isset($_POST['departamento_editar'])) {
+		$id = $_POST['id'];
+		$nome = $_POST['local'];
+		$cpfGerente = $_POST['cpfGerente'];
+		$datainicio = $_POST['datainicio'];
+		$localdepartamento = $_POST['localdepartamento'];
+
+		$sql = "UPDATE departamento SET fkCpf = '{$cpfGerente}' , NomeDepartamento = '{$nome}', 
+							DataInicioGerente = '{$datainicio}', fkidLocalDepartamento = '{$localdepartamento}' 
+				WHERE NumDepartamento = {$id}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=departamento-listartodos');
+		} else {
+			print "<script>alert('Não foi possivel editar o departamento');</script>";
+			print "<script>location.href='?page=departamento-listartodos';</script>";
+		}
+		exit;
+	}
+
+
+	if (isset($_POST['departamento_deletar'])) {
+		$id = $_POST['departamento_deletar'];
+
+		$sql = "DELETE FROM departamento WHERE NumDepartamento = {$id}";
+		echo $sql;
+		$res = $conn->query($sql);
+		if ($res==true) {
+			header('Location: home.php?page=departamento-listartodos');
+		} else {
+			print "<script>alert('Não foi possivel editar o departamento');</script>";
+			print "<script>location.href='?page=departamento-listartodos';</script>";
+		}
+		exit;
+	}
+	
+
 ###################################### DEPARTAMENTO  ######################################
 ?>

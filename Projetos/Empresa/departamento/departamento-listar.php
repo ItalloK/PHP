@@ -30,8 +30,8 @@
                             </a>
                             <form action="acoes.php" method="POST" class="d-inline">
                                 <button onclick="return confirm('Tem certeza que deseja excluir?')" 
-                                    type="submit" name="delete_dependente" 
-                                    value="<?=$row->iddependente?>" class="btn btn-danger btn-sm">
+                                    type="submit" name="departamento_deletar" 
+                                    value="<?=$row->NumDepartamento?>" class="btn btn-danger btn-sm">
                                 <span class="bi-trash3-fill"></span>&nbsp;Excluir
                                 </button>
                             </form>

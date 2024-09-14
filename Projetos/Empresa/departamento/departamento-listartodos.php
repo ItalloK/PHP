@@ -36,8 +36,8 @@
                                     <a href="?page=departamento-editar&id=<?=$row->NumDepartamento?>" class="btn btn-sm btn-success">Editar</a>
                                     <form action="acoes.php" method="POST" class="d-inline">
                                         <button onclick="return confirm('Tem certeza que deseja excluir?')" 
-                                            type="submit" name="projeto_delete" 
-                                            value="<?=$row->idProjeto?>" class="btn btn-danger btn-sm">
+                                            type="submit" name="departamento_deletar" 
+                                            value="<?=$row->NumDepartamento?>" class="btn btn-danger btn-sm">
                                         <span class="bi-trash3-fill"></span>&nbsp;Excluir
                                         </button>
                                     </form>
