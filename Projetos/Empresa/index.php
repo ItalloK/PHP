@@ -1,6 +1,6 @@
 <?php
 include('conexao.php');
-$erro = ""; // Variável para armazenar mensagens de erro
+$erro = "";
 
 if (isset($_POST['email']) || isset($_POST['senha'])) {
 
@@ -11,8 +11,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     } else {
 
         $email = $conn->real_escape_string($_POST['email']);
-        //$senha = $conn->real_escape_string($_POST['senha']);
-        $senha = $conn->real_escape_string(md5($_POST['senha'])); // com Md5
+        $senha = $conn->real_escape_string(md5($_POST['senha']));
 
         $sql_code = "SELECT * FROM funcionario WHERE Email = '$email' AND Senha = '$senha'";
         $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $conn->error);
