@@ -1,6 +1,6 @@
 <?php
+    include('protect.php');
     require('conexao.php');
-
     $sql = "SELECT Cpf, Nome FROM funcionario";
     $result = $conn->query($sql);
 

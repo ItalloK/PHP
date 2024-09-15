@@ -1,7 +1,8 @@
 <?php
-  require('conexao.php');
-
-  $cpf = $_REQUEST["id"];
+    include('protect.php');
+    require('conexao.php');
+    
+    $cpf = $_REQUEST["id"];
 ?>
 
 <div class="card-header">

@@ -1,4 +1,5 @@
 <?php 
+    include('protect.php');
     require('conexao.php');
 
     $id = $_REQUEST['id'];

@@ -1,3 +1,6 @@
+<?php 
+    include('protect.php');
+?>
 <h2>Realize o seu cadastro</h2>
 <form action="acoes.php" method="POST">
     <div class="form-floating mb-3">

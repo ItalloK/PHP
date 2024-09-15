@@ -1,9 +1,10 @@
 <?php
-  require('conexao.php');
+    include('protect.php');
+    require('conexao.php');
 
-  $sql = "SELECT * FROM funcionario WHERE Cpf = '".$_REQUEST["id"]."'";
-  $res = $conn->query($sql);
-  $row = $res->fetch_object();
+    $sql = "SELECT * FROM funcionario WHERE Cpf = '".$_REQUEST["id"]."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch_object();
 ?>
 
 <h2>Atualize o seu cadastro</h2>

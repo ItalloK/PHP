@@ -1,4 +1,5 @@
 <?php
+    include('protect.php');
 	if (isset($_SESSION['mensagem'])):
 ?>
 

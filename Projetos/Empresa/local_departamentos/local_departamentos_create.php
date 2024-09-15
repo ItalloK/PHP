@@ -1,5 +1,6 @@
 <?php
-  require('conexao.php');
+    include('protect.php');
+    require('conexao.php');
 ?>
 
 <h2>Cadastro de Local de Departamentos</h2>

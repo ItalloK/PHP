@@ -1,5 +1,6 @@
 <?php
-  require('conexao.php');
+    include('protect.php');
+    require('conexao.php');
 ?>
 <html>
     <body>

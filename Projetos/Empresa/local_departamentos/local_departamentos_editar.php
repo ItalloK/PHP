@@ -1,9 +1,10 @@
 <?php
-  require('conexao.php');
+    include('protect.php');
+    require('conexao.php');
 
-  $sql = "SELECT * FROM local_departamento WHERE idLocalDepartamento = '".$_REQUEST["id"]."'";
-  $res = $conn->query($sql);
-  $row = $res->fetch_object();
+    $sql = "SELECT * FROM local_departamento WHERE idLocalDepartamento = '".$_REQUEST["id"]."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch_object();
 
 ?>
 

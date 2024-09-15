@@ -1,10 +1,10 @@
 <?php
-  require('conexao.php');
-
-  $sql = "SELECT * FROM dependente WHERE iddependente = '".$_REQUEST["id"]."'";
-  $res = $conn->query($sql);
-  $row = $res->fetch_object();
-
+    include('protect.php');
+    require('conexao.php');
+    
+    $sql = "SELECT * FROM dependente WHERE iddependente = '".$_REQUEST["id"]."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch_object();
 ?>
 
 <h2>Ediar Dependente</h2>

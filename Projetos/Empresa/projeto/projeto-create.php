@@ -1,4 +1,5 @@
 <?php 
+    include('protect.php');
     require('conexao.php');
     $sql = "SELECT NumDepartamento , NomeDepartamento FROM departamento";
     $result = $conn->query($sql);

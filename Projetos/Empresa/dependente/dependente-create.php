@@ -1,7 +1,7 @@
 <?php
-  require('conexao.php');
-
-  $cpf = $_REQUEST["cpf"];
+    include('protect.php');
+    require('conexao.php');
+    $cpf = $_REQUEST["cpf"];
 ?>
 
 

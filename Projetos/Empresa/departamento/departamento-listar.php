@@ -1,6 +1,7 @@
 <?php
-  require('conexao.php');
-  $numDepartamento = $_REQUEST["id"];
+    include('protect.php');
+    require('conexao.php');
+    $numDepartamento = $_REQUEST["id"];
 ?>
 
 <div class="card-header">

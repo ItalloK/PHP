@@ -1,3 +1,6 @@
+<?php
+  include('protect.php');
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -84,6 +87,7 @@
                         print"<h1>Bem vindos!!!</h1>";
                     }
                   ?>
+                  <a href="logout.php">Sair</a>
                 </div>  
               </div>
             </div>
