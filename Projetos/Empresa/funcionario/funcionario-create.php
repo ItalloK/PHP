@@ -38,7 +38,7 @@
         <label for="password" class="form-label">Digite sua senha</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua senha">
+        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua senha" maxlength="255" required>
         <label for="confirmpassword" class="form-label">Confirme sua senha</label>
     </div>
     <input type="submit" name="create_funcionario" class="btn btn-primary" value="Salvar">

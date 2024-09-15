@@ -12,7 +12,7 @@
 		$sexo = $_POST['sexo'];
 		$salario = $_POST['salario'];
 		$email = $_POST['email'];
-		$senha = md5($_POST['senha']);
+		$senha = md5($_POST['password']);
 		
 		## Verificação de CPF ##
 		$sql = "SELECT Cpf FROM funcionario WHERE Cpf = {$cpf}";
@@ -48,8 +48,8 @@
 		$sexo = $_POST['sexo'];
 		$salario = $_POST['salario'];
 		$email = $_POST['email'];
-		$senha = md5($_POST['senha']);
-		
+		$senha = md5($_POST['password']);
+
 		$sql = "UPDATE funcionario SET 
 					Nome = '{$nome}', 
 					DataNascimento = '{$datanascimento}',
