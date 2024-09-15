@@ -87,7 +87,6 @@
                         print"<h1>Bem vindos!!!</h1>";
                     }
                   ?>
-                  <a href="logout.php">Sair</a>
                 </div>  
               </div>
             </div>

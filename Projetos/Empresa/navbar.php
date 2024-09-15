@@ -24,6 +24,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="?page=local_departamentos_listar">Local Departamentos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="logout.php">Sair</a>
+                </li>
             </ul>
         </div>
     </div>
